@@ -1,5 +1,5 @@
 I sincerely hope that no one uses such a dumb format as me with a four point excimation point scale? But it's pretty simple to use
-1. Make a `env.json` similar to this with your own (api clients)[https://anilist.co/settings/developer] id and secret
+1. Make a `env.json` similar to this with your own [api clients](https://anilist.co/settings/developer) id and secret
 ```
 {
     "client_id": 30459,
