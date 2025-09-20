@@ -4,11 +4,11 @@ import time
 
 def get_score(animetxt):
     if '!!!!' in animetxt:
-        return 100
+        return float(10)
     if '!!!' in animetxt:
-        return 90
+        return float(9)
     if '!!' in animetxt:
-        return 80
+        return float(8)
     return None
 
 with open('env.json') as env:
@@ -58,16 +58,11 @@ graphql_headers = {
     "Accept": "application/json",
 }
 
-mutation = '''mutation ($mediaId: Int, $score: Float, $status: MediaListStatus) {
-  SaveMediaListEntry(
-    mediaId: $mediaId
-    score: $score
-    status: $status
-  ) {
-    id
-    score(format: POINT_100)
-    status
-    updatedAt
+mutation = '''mutation Mutation($mediaId: Int, $score: Float, $progress: Int) {
+  SaveMediaListEntry(mediaId: $mediaId, score: $score, progress: $progress) {
+    mediaId
+    progress
+    score
   }
 }'''
 
